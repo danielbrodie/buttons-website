@@ -1,0 +1,21 @@
+/*
+  # Prevent clickjacking
+  X-Frame-Options: DENY
+  
+  # Prevent MIME type sniffing
+  X-Content-Type-Options: nosniff
+  
+  # XSS protection (legacy browsers)
+  X-XSS-Protection: 1; mode=block
+  
+  # Referrer policy
+  Referrer-Policy: strict-origin-when-cross-origin
+  
+  # HTTPS only
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  
+  # Permissions policy (disable unnecessary features)
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()
+  
+  # Content Security Policy
+  Content-Security-Policy: default-src 'self'; img-src 'self' https://developer.apple.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'

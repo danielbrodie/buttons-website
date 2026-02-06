@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bad Gateway - 365 Buttons</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <style>
+        :root {
+            --background: rgb(245, 237, 227);
+            --text-primary: rgb(64, 56, 51);
+            --text-secondary: rgb(100, 90, 82);
+            --accent: #5B9BD5;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: rgb(43, 36, 31);
+                --text-primary: rgb(245, 237, 227);
+                --text-secondary: rgb(168, 153, 138);
+                --accent: #7BB3E0;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background: var(--background);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container { text-align: center; padding: 2rem; }
+        h1 { font-size: 4rem; font-weight: normal; margin-bottom: 1rem; }
+        p { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1>502</h1>
+        <p>The thread got tangled somewhere.</p>
+        <a href="/">← Back to the jar</a>
+    </main>
+</body>
+</html>

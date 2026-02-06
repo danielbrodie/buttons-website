@@ -3,109 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - Buttons</title>
+    <title>Support - 365 Buttons</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <style>
+        :root {
+            --background: rgb(245, 237, 227);
+            --background-subtle: rgba(255, 255, 255, 0.5);
+            --text-primary: rgb(64, 56, 51);
+            --text-secondary: rgb(115, 102, 92);
+            --text-muted: rgb(100, 90, 82);
+            --border: rgba(0, 0, 0, 0.1);
+            --accent: #5B9BD5;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: rgb(43, 36, 31);
+                --background-subtle: rgba(255, 255, 255, 0.08);
+                --text-primary: rgb(245, 237, 227);
+                --text-secondary: rgb(168, 153, 138);
+                --text-muted: rgb(158, 148, 138);
+                --border: rgba(255, 255, 255, 0.1);
+                --accent: #7BB3E0;
+            }
+        }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0a0a0a;
-            color: #e5e5e5;
+            font-family: Georgia, 'Times New Roman', serif;
+            background: var(--background);
+            color: var(--text-primary);
             line-height: 1.7;
             min-height: 100vh;
         }
+        
         .container {
-            max-width: 640px;
+            max-width: 600px;
             margin: 0 auto;
             padding: 4rem 2rem;
         }
-        h1 {
-            font-size: 2rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            color: #fff;
-        }
-        h2 {
-            font-size: 1.25rem;
-            font-weight: 500;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-        p {
-            margin-bottom: 1rem;
-            color: #ccc;
-        }
-        a {
-            color: #fff;
-            text-decoration: none;
-            border-bottom: 1px solid #444;
-        }
-        a:hover {
-            border-color: #fff;
-        }
+        
         .back {
             display: inline-block;
             margin-bottom: 2rem;
-            color: #888;
-            border-bottom: none;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.95rem;
         }
+        
         .back:hover {
-            color: #fff;
+            text-decoration: underline;
         }
-        .faq-item {
+        
+        h1 {
+            font-size: 2rem;
+            font-weight: normal;
             margin-bottom: 2rem;
         }
-        .faq-q {
-            font-weight: 500;
-            color: #fff;
-            margin-bottom: 0.5rem;
+        
+        h2 {
+            font-size: 1.1rem;
+            font-weight: normal;
+            font-style: italic;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
         }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        a {
+            color: var(--accent);
+        }
+        
         .contact-box {
-            background: #111;
-            border: 1px solid #222;
-            border-radius: 8px;
+            background: var(--background-subtle);
+            border-radius: 12px;
             padding: 2rem;
             margin-top: 3rem;
+        }
+        
+        .contact-box h2 {
+            margin-top: 0;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <a href="index.html" class="back">← Back</a>
         <h1>Support</h1>
         
-        <h2>Frequently Asked Questions</h2>
+        <h2>How do I add the widget?</h2>
+        <p>Long-press on your home screen, tap the + in the corner, search for "365 Buttons", and pick your size.</p>
         
-        <div class="faq-item">
-            <p class="faq-q">How do I add the widget to my home screen?</p>
-            <p>Long-press on your home screen, tap the + button in the top corner, search for "Buttons", and choose your preferred widget size.</p>
-        </div>
+        <h2>What's the difference between counting up and counting down?</h2>
+        <p>Counting up shows buttons for days that have passed. Counting down shows buttons for days remaining. Same data, different feeling. Some people find one more comforting than the other.</p>
         
-        <div class="faq-item">
-            <p class="faq-q">What's the difference between Counting Up and Counting Down?</p>
-            <p>Counting Up shows buttons for days that have passed. Counting Down shows buttons for days remaining. Same data, different perspective—accumulation vs. urgency.</p>
-        </div>
+        <h2>Can I track other things?</h2>
+        <p>Yes. Hours in a day. Days in a week. Weeks in a year. Your whole life in weeks, if you're feeling existential. It's all there.</p>
         
-        <div class="faq-item">
-            <p class="faq-q">Can I track things other than the year?</p>
-            <p>Yes! Buttons supports multiple time scales: minutes in an hour, hours in a day, days in a week/month/year, weeks in a year, and even your lifetime in various units.</p>
-        </div>
+        <h2>Why buttons?</h2>
+        <p>Buttons are small and tangible. They mark presence and absence equally well. A jar of buttons is finite — you can hold it, count it, feel its weight change.</p>
         
-        <div class="faq-item">
-            <p class="faq-q">Why buttons?</p>
-            <p>Buttons are small, tangible, familiar. They mark presence and absence equally well. A jar of buttons is finite—you can hold it, count it, feel its weight change.</p>
-        </div>
-        
-        <div class="faq-item">
-            <p class="faq-q">Does the app track my usage or collect data?</p>
-            <p>No. See our <a href="privacy.html">Privacy Policy</a>. We collect nothing.</p>
-        </div>
+        <h2>Do you collect my data?</h2>
+        <p>No. Nothing leaves your device. See our <a href="privacy.html">privacy policy</a>.</p>
         
         <div class="contact-box">
-            <h2 style="margin-top: 0;">Still need help?</h2>
-            <p>Email us at <a href="mailto:daniel@brodiegraphics.com">daniel@brodiegraphics.com</a></p>
-            <p style="margin-bottom: 0; color: #888;">We typically respond within 24 hours.</p>
+            <h2>Still stuck?</h2>
+            <p>Email <a href="mailto:hello@365buttons.io">hello@365buttons.io</a></p>
+            <p style="color: var(--text-muted); margin-bottom: 0;">I'll get back to you.</p>
         </div>
-    </div>
+    </main>
 </body>
 </html>

@@ -3,100 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buttons: Time Visualized</title>
+    <title>365 Buttons</title>
+    <meta name="description" content="365 buttons. One for each day. It doesn't have to make sense to anyone but you.">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://365buttons.io/">
+    <meta property="og:title" content="365 Buttons">
+    <meta property="og:description" content="365 buttons. One for each day. It doesn't have to make sense to anyone but you.">
+    <meta property="og:image" content="https://365buttons.io/img/icon.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="365 Buttons">
+    <meta name="twitter:description" content="365 buttons. One for each day. It doesn't have to make sense to anyone but you.">
+    <meta name="twitter:image" content="https://365buttons.io/img/icon.png">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "365 Buttons",
+      "description": "365 buttons. One for each day. It doesn't have to make sense to anyone but you.",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "iOS",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "365 Buttons LLC"
+      }
+    }
+    </script>
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <style>
+        :root {
+            /* Light mode - linen tablecloth */
+            --background: rgb(245, 237, 227);
+            --background-subtle: rgba(255, 255, 255, 0.4);
+            --text-primary: rgb(64, 56, 51);
+            --text-secondary: rgb(115, 102, 92);
+            --text-muted: rgb(100, 90, 82);
+            --empty-slot: rgba(0, 0, 0, 0.08);
+            --border: rgba(0, 0, 0, 0.1);
+            --accent: #5B9BD5;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                /* Dark mode - worn leather / dark denim */
+                --background: rgb(43, 36, 31);
+                --background-subtle: rgba(255, 255, 255, 0.06);
+                --text-primary: rgb(245, 237, 227);
+                --text-secondary: rgb(168, 153, 138);
+                --text-muted: rgb(158, 148, 138);
+                --empty-slot: rgba(255, 255, 255, 0.1);
+                --border: rgba(255, 255, 255, 0.1);
+                --accent: #7BB3E0;
+            }
+        }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0a0a0a;
-            color: #e5e5e5;
-            line-height: 1.6;
+            font-family: Georgia, 'Times New Roman', serif;
+            background: var(--background);
+            color: var(--text-primary);
+            line-height: 1.7;
             min-height: 100vh;
         }
+        
         .container {
-            max-width: 640px;
+            max-width: 600px;
             margin: 0 auto;
             padding: 4rem 2rem;
+            text-align: center;
         }
+        
+        .icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
         h1 {
             font-size: 2.5rem;
-            font-weight: 300;
+            font-weight: normal;
             margin-bottom: 0.5rem;
-            color: #fff;
         }
-        .tagline {
-            font-size: 1.25rem;
-            color: #888;
-            margin-bottom: 3rem;
-        }
-        .description {
+        
+        .subtitle {
             font-size: 1.1rem;
+            color: var(--text-secondary);
             margin-bottom: 3rem;
-            color: #ccc;
+            font-style: italic;
         }
-        .links {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-        a {
-            color: #fff;
-            text-decoration: none;
-            border-bottom: 1px solid #444;
-            transition: border-color 0.2s;
-        }
-        a:hover {
-            border-color: #fff;
-        }
-        .app-store-badge {
-            margin-top: 2rem;
-        }
-        .app-store-badge img {
-            height: 50px;
-        }
-        .footer {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid #222;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        .button-visual {
-            font-size: 3rem;
+        
+        .description {
+            font-size: 1.15rem;
             margin-bottom: 2rem;
-            letter-spacing: 0.2em;
-            opacity: 0.6;
+            text-align: left;
+            color: var(--text-secondary);
+        }
+        
+        .description p {
+            margin-bottom: 1.25rem;
+        }
+        
+        .buttons-display {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+            padding: 1.5rem;
+            background: var(--background-subtle);
+            border-radius: 12px;
+        }
+        
+        .buttons-display img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            opacity: 0.9;
+            transition: transform 0.2s;
+        }
+        
+        .buttons-display img:hover {
+            transform: scale(1.2);
+        }
+        
+        .empty-button {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--empty-slot);
+        }
+        
+        .app-store-badge {
+            margin: 2rem 0;
+        }
+        
+        .app-store-badge img {
+            height: 54px;
+        }
+        
+        .links {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .links a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .links a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer {
+            margin-top: 3rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="button-visual">◉ ◉ ◉ ○ ○ ○</div>
-        <h1>Buttons</h1>
-        <p class="tagline">Time Visualized</p>
+    <main class="container">
+        <img src="img/icon.png" alt="365 Buttons" class="icon">
+        <h1>365 Buttons</h1>
+        <p class="subtitle">One for each day</p>
         
-        <p class="description">
-            A jar of buttons. Each one a day. Watch them fill—or empty—as time passes.
-            <br><br>
-            No notifications. No streaks. No gamification. Just time, visualized.
-        </p>
-        
-        <div class="links">
-            <a href="support.html">Support</a>
-            <a href="privacy.html">Privacy Policy</a>
+        <div class="description">
+            <p>365 buttons. One for each day of the year.</p>
+            <p>That's it. That's the app.</p>
+            <p>Watch them fill in as days pass. Or watch them empty out, if that's more your speed. Real photographed buttons — the kind from a jar in your grandmother's sewing room.</p>
+            <p>There's no notifications. Nothing to complete. No streaks to break. It doesn't want anything from you.</p>
+            <p>It's just a quiet way to see time passing.</p>
         </div>
         
-        <!-- Uncomment when app is live
+        <div class="buttons-display">
+            <img src="img/button-001.png" alt="">
+            <img src="img/button-015.png" alt="">
+            <img src="img/button-030.png" alt="">
+            <img src="img/button-050.png" alt="">
+            <img src="img/button-075.png" alt="">
+            <img src="img/button-100.png" alt="">
+            <div class="empty-button"></div>
+            <div class="empty-button"></div>
+            <div class="empty-button"></div>
+            <div class="empty-button"></div>
+        </div>
+        
+        <!-- Uncomment when live on App Store
         <div class="app-store-badge">
-            <a href="https://apps.apple.com/app/buttons">
+            <a href="https://apps.apple.com/app/365-buttons">
                 <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
             </a>
         </div>
         -->
         
-        <div class="footer">
-            <p>© 2026 Daniel Brodie</p>
+        <div class="links">
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy</a>
         </div>
-    </div>
+        
+        <div class="footer">
+            <p>It doesn't have to make sense to anyone but you.</p>
+            <p style="margin-top: 1.5rem;">© 2026 365 Buttons LLC</p>
+            <p><a href="mailto:support@365buttons.io" style="color: var(--text-muted);">support@365buttons.io</a></p>
+        </div>
+    </main>
 </body>
 </html>

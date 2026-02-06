@@ -3,87 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Buttons</title>
+    <title>Privacy - 365 Buttons</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <style>
+        :root {
+            --background: rgb(245, 237, 227);
+            --background-subtle: rgba(255, 255, 255, 0.5);
+            --text-primary: rgb(64, 56, 51);
+            --text-secondary: rgb(115, 102, 92);
+            --text-muted: rgb(100, 90, 82);
+            --border: rgba(0, 0, 0, 0.1);
+            --accent: #5B9BD5;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: rgb(43, 36, 31);
+                --background-subtle: rgba(255, 255, 255, 0.08);
+                --text-primary: rgb(245, 237, 227);
+                --text-secondary: rgb(168, 153, 138);
+                --text-muted: rgb(158, 148, 138);
+                --border: rgba(255, 255, 255, 0.1);
+                --accent: #7BB3E0;
+            }
+        }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0a0a0a;
-            color: #e5e5e5;
+            font-family: Georgia, 'Times New Roman', serif;
+            background: var(--background);
+            color: var(--text-primary);
             line-height: 1.7;
             min-height: 100vh;
         }
+        
         .container {
-            max-width: 640px;
+            max-width: 600px;
             margin: 0 auto;
             padding: 4rem 2rem;
         }
-        h1 {
-            font-size: 2rem;
-            font-weight: 300;
-            margin-bottom: 0.5rem;
-            color: #fff;
-        }
-        .updated {
-            color: #666;
-            margin-bottom: 3rem;
-        }
-        h2 {
-            font-size: 1.25rem;
-            font-weight: 500;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-        p {
-            margin-bottom: 1rem;
-            color: #ccc;
-        }
-        a {
-            color: #fff;
-            text-decoration: none;
-            border-bottom: 1px solid #444;
-        }
-        a:hover {
-            border-color: #fff;
-        }
+        
         .back {
             display: inline-block;
             margin-bottom: 2rem;
-            color: #888;
-            border-bottom: none;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.95rem;
         }
+        
         .back:hover {
-            color: #fff;
+            text-decoration: underline;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+        }
+        
+        .updated {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            font-size: 1.1rem;
+            font-weight: normal;
+            font-style: italic;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        a {
+            color: var(--accent);
+        }
+        
+        .short-version {
+            background: var(--background-subtle);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .short-version p {
+            margin-bottom: 0;
+            font-size: 1.1rem;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <a href="index.html" class="back">← Back</a>
-        <h1>Privacy Policy</h1>
+        <h1>Privacy</h1>
         <p class="updated">Last updated: January 22, 2026</p>
         
-        <h2>The Short Version</h2>
-        <p>Buttons does not collect, store, or transmit any personal data. Period.</p>
+        <div class="short-version">
+            <p>365 Buttons doesn't collect anything. Your buttons are yours.</p>
+        </div>
         
-        <h2>Data Collection</h2>
-        <p>We don't collect any data. No analytics. No tracking. No accounts. No telemetry.</p>
+        <h2>Data collection</h2>
+        <p>None. No analytics, no tracking, no accounts, no telemetry.</p>
         
-        <h2>Data Storage</h2>
-        <p>All your settings and preferences are stored locally on your device using Apple's standard storage mechanisms (UserDefaults and App Groups for widget sync). This data never leaves your device.</p>
+        <h2>Data storage</h2>
+        <p>Your settings live on your device. The widget syncs with the app using Apple's App Groups. Nothing leaves your phone.</p>
         
-        <h2>Third-Party Services</h2>
-        <p>Buttons does not integrate with any third-party analytics, advertising, or tracking services.</p>
+        <h2>Third parties</h2>
+        <p>There aren't any. No SDKs, no trackers, no ad networks.</p>
         
-        <h2>Widgets</h2>
-        <p>The Buttons widget uses App Groups to share your display preferences between the main app and the widget. This data stays entirely on your device.</p>
+        <h2>Changes</h2>
+        <p>If this ever changes, I'll update this page. But it won't. The whole point is that it doesn't want anything from you.</p>
         
-        <h2>Changes to This Policy</h2>
-        <p>If we ever change this policy, we'll update this page. But honestly, our commitment to collecting zero data isn't going to change.</p>
-        
-        <h2>Contact</h2>
-        <p>Questions? Email <a href="mailto:daniel@brodiegraphics.com">daniel@brodiegraphics.com</a></p>
-    </div>
+        <h2>Questions?</h2>
+        <p><a href="mailto:hello@365buttons.io">hello@365buttons.io</a></p>
+    </main>
 </body>
 </html>
