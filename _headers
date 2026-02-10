@@ -1,21 +1,13 @@
 /*
-  # Prevent clickjacking
-  X-Frame-Options: DENY
-  
-  # Prevent MIME type sniffing
   X-Content-Type-Options: nosniff
-  
-  # XSS protection (legacy browsers)
-  X-XSS-Protection: 1; mode=block
-  
-  # Referrer policy
+  X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
-  
-  # HTTPS only
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  
-  # Permissions policy (disable unnecessary features)
-  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()
-  
-  # Content Security Policy
-  Content-Security-Policy: default-src 'self'; img-src 'self' https://developer.apple.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Permissions-Policy: camera=();report-to=default, microphone=();report-to=default, geolocation=();report-to=default, fullscreen=*;report-to=default, payment=();report-to=default
+  Cross-Origin-Embedder-Policy-Report-Only: require-corp; report-to="default"
+  Content-Security-Policy: default-src 'none'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'sha256-3C+PFZdoCR8LK41ZmQl12h6Oqtbt+AKBRCAgx8WeGuw=' 'unsafe-hashes' 'sha256-i2sZysJsK6bSduhXCopySYrSJWwkyofJX+CaFV8z00c=' 'sha256-nSHaN8R+/9MMC0J+DqWbkaG9lLtoRXd7Vpec6fvy5EM='; img-src 'self' https://developer.apple.com; font-src 'self'; connect-src 'self' https://cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; report-uri https://jqcsb0d9.uriports.com/reports/enforce; report-to default
+  Reporting-Endpoints: default="https://jqcsb0d9.uriports.com/reports"
+  Report-To: {"group":"default","max_age":10886400,"endpoints":[{"url":"https://jqcsb0d9.uriports.com/reports"}],"include_subdomains":true}
+  NEL: {"report_to":"default","max_age":2592000,"include_subdomains":true,"failure_fraction":1.0}
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
